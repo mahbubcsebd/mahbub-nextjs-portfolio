@@ -1,0 +1,12 @@
+{
+    "Header": {
+        "nameLogo": "mahbub",
+        "hireMe": "hire me",
+        "Menu": {
+            "home": "home",
+            "aboutMe": "about me",
+            "portfolio": "portfolio",
+            "contact": "contact"
+        }
+    }
+}
