@@ -2,74 +2,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import CodePreview from './CodePreview';
 import TypewriterComponent from './TypewriterComponent';
-
-const CodePreview = () => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className="relative overflow-hidden bg-gray-900 rounded-lg shadow-2xl"
-    >
-        {/* Window Controls */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-700 bg-gray-800/50">
-            <div className="w-3 h-3 bg-red-500 rounded-full" />
-            <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-            <div className="w-3 h-3 bg-green-500 rounded-full" />
-        </div>
-
-        {/* Code Content */}
-        <div className="p-6 font-mono text-sm leading-relaxed">
-            <div className="text-gray-400">
-                <span className="text-purple-400">const</span>{' '}
-                <span className="text-white">coder</span> ={' '}
-                <span className="text-yellow-300">{'{'}</span>
-            </div>
-            <div className="pl-4">
-                <span className="text-cyan-300">name:</span>{' '}
-                <span className="text-orange-300">'Mahbubur Rahman'</span>,
-            </div>
-            <div className="pl-4">
-                <span className="text-cyan-300">skills:</span>{' '}
-                <span className="text-yellow-300">{'['}</span>
-                <span className="text-orange-300">'React'</span>,{' '}
-                <span className="text-orange-300">'Node'</span>
-                <span className="text-yellow-300">{']'}</span>,
-            </div>
-            <div className="pl-4">
-                <span className="text-cyan-300">hardWorker:</span>{' '}
-                <span className="text-purple-400">true</span>,
-            </div>
-            <div className="pl-4">
-                <span className="text-cyan-300">problemSolver:</span>{' '}
-                <span className="text-purple-400">true</span>,
-            </div>
-            <div className="pl-4">
-                <span className="text-emerald-400">hireable:</span>{' '}
-                <span className="text-purple-400">function</span>() {'{'}
-            </div>
-            <div className="pl-8">
-                <span className="text-purple-400">return</span> (
-            </div>
-            <div className="pl-12">
-                <span className="text-cyan-300">this</span>.hardWorker &&
-            </div>
-            <div className="pl-12">
-                <span className="text-cyan-300">this</span>.problemSolver &&
-            </div>
-            <div className="pl-12">
-                <span className="text-cyan-300">this</span> .skills. length 5
-            </div>
-            <div className="pl-8">);</div>
-            <div className="pl-4">{'}'}</div>
-            <div className="text-yellow-300">{'}'}</div>
-        </div>
-    </motion.div>
-);
+import { HoverBorderGradient } from './ui/hover-border-gradient';
 
 const HeroSection = () => {
     return (
-        <div className="">
+        <div className="hero-section">
             <div className="container">
                 <div className="flex items-center min-h-screen text-white">
                     <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -92,9 +32,7 @@ const HeroSection = () => {
                                 >
                                     I'm
                                 </motion.span>
-                                <span className="text-3xl md:text-4xl">
-                                    ,
-                                </span>
+                                <span className="text-3xl md:text-4xl">,</span>
                                 <br />
                                 <motion.span
                                     initial={{ opacity: 0 }}
@@ -119,11 +57,23 @@ const HeroSection = () => {
                                 performance.
                             </motion.p>
                             <TypewriterComponent />
+                            <div className="flex items-center gap-4">
+                                <HoverBorderGradient
+                                    containerClassName="rounded-full"
+                                    as="button"
+                                    className="flex items-center text-black bg-white dark:bg-black dark:text-white"
+                                >
+                                    <Link href="/resume">Resume</Link>
+                                </HoverBorderGradient>
+                                <div className="relative overflow-hidden rounded-full dark:bg-zinc-900 bg-white shadow border dark:border-zinc-800 group border-zinc-400 p-0.5">
+                                    <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite_reverse] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#fff_0%,#09090B_7%)] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#fff_5%)] group-hover:bg-none" />
+                                    <button className="w-full px-8 py-2 font-semibold rounded-full text-zinc-800 dark:text-zinc-200 backdrop-blur-xl bg-zinc-50 dark:bg-zinc-900">
+                                        Hello
+                                    </button>
+                                </div>
+                            </div>
                         </motion.div>
-
-                        {/* Right Column - Code Preview */}
                         <div className="relative">
-                            {/* Add subtle gradient effect behind the code window */}
                             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600/30 to-emerald-500/30 blur-xl" />
                             <CodePreview />
                         </div>

@@ -1,69 +1,75 @@
 "use client"
 
-import BlogImage1 from "@/assets/images/blog-1.png";
+// import { DirectionAwareHover } from '@/components/ui/direction-aware-hover';
+import blogs from '@/constant/blogs';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import BlogCard from "./BlogCard";
+
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { DirectionAwareHover } from './ui/direction-aware-hover';
 
-const BlogCard = ({ date, title, description, image, index }) => {
+export function CardDemo() {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="w-full rounded-xl overflow-hidden border border-zinc-800 transition-colors"
-        >
-            <div className="p-4 flex gap-4">
-                <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+        <div className="max-w-xs w-full group/card">
+            <div
+                className={cn(
+                    ' cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4',
+                    'bg-[url(https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80)] bg-cover'
+                )}
+            >
+                <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
+                <div className="flex flex-row items-center space-x-4 z-10">
                     <Image
-                        src={image}
-                        alt={title}
-                        className="w-full h-full object-cover"
+                        height="100"
+                        width="100"
+                        alt="Avatar"
+                        src="/manu.png"
+                        className="h-10 w-10 rounded-full border-2 object-cover"
                     />
+                    <div className="flex flex-col">
+                        <p className="font-normal text-base text-gray-50 relative z-10">
+                            Manu Arora
+                        </p>
+                        <p className="text-sm text-gray-400">2 min read</p>
+                    </div>
                 </div>
-
-                <div className="flex flex-col flex-grow">
-                    <span className="text-emerald-400 text-sm">{date}</span>
-                    <h2 className="text-xl font-semibold text-white mt-2">
-                        {title}
-                    </h2>
-                    <p className="text-gray-400 text-sm mt-2 line-clamp-2">
-                        {description}
+                <div className="text content">
+                    <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10">
+                        Author Card
+                    </h1>
+                    <p className="font-normal text-sm text-gray-50 relative z-10 my-4">
+                        Card with Author avatar, complete name and time to read
+                        - most suitable for blogs.
                     </p>
-
-                    <motion.button
-                        whileHover={{ x: 5 }}
-                        className="flex items-center gap-2 text-white mt-4 text-sm"
-                    >
-                        Read More
-                        <ArrowRight className="w-4 h-4" />
-                    </motion.button>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
-};
+}
+
+
+
+export function DirectionAwareHoverDemo() {
+    const imageUrl =
+        'https://images.unsplash.com/photo-1663765970236-f2acfde22237?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    return (
+        <div className="h-[40rem] relative  flex items-center justify-center">
+            <DirectionAwareHover imageUrl={imageUrl}>
+                <p className="font-bold text-xl">In the mountains</p>
+                <p className="font-normal text-sm">$1299 / night</p>
+            </DirectionAwareHover>
+        </div>
+    );
+}
+
+
 
 const BlogSections = () => {
-    const blogs = [
-        {
-            date: '30 Jan 2024',
-            title: 'The Ultimate Guide to Responsive Web Design',
-            description:
-                "Responsive web design is an approach to web development that ensures a website's layout and content adapt.",
-            image: BlogImage1,
-        },
-        {
-            date: '30 Jan 2024',
-            title: 'Exploring the Power of JavaScript Libraries and Frameworks',
-            description:
-                "Responsive web design is an approach to web development that ensures a website's layout and content adapt.",
-            image: BlogImage1,
-        },
-    ];
-
     return (
         <div className="py-16">
+        <CardDemo />
+        <DirectionAwareHoverDemo />
             <div className="container">
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-2xl font-bold text-emerald-400">

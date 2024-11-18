@@ -67,7 +67,6 @@ const AboutSection = () => {
                     className=""
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                        {/* Image Section */}
                         <motion.div
                             variants={imageVariants}
                             className="relative"

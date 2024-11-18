@@ -90,5 +90,10 @@ module.exports = {
             },
         },
     },
+    variants: {
+        extend: {
+            display: ['print'],
+        },
+    },
     plugins: [require('tailwindcss-animate')],
 };
