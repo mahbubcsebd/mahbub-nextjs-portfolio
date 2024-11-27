@@ -1,7 +1,7 @@
 'use client';
 
-import banglaImg from '@/assets/icons/bangla.svg';
-import englishImg from '@/assets/icons/english.svg';
+import banglaImg from '@/assets/icons/bangladesh.svg';
+import englishImg from '@/assets/icons/usa.svg';
 import {
     Select,
     SelectContent,
@@ -29,15 +29,13 @@ const LanguageSwitcher = () => {
             value={language}
             onValueChange={changeLanguage}
         >
-            <SelectTrigger className="w-6 h-6 overflow-hidden rounded-full border-none bg-transparent focus:ring-0 focus:ring-offset-0 p-0 [&>svg]:hidden">
+            <SelectTrigger className="w-10 h-6 rounded-none overflow-hidden border-none bg-transparent focus:ring-0 focus:ring-offset-0 p-0 [&>svg]:hidden">
                 <SelectValue>
-                    <div className="relative w-6 h-6 rounded-full">
+                    <div className="relative w-10 h-6">
                         <Image
                             src={currentLanguage?.flag}
                             alt={currentLanguage?.name}
-                            className="rounded-full"
-                            fill
-                            sizes="24px"
+                            className="w--full h-full"
                         />
                     </div>
                 </SelectValue>
@@ -53,11 +51,11 @@ const LanguageSwitcher = () => {
                         className="cursor-pointer"
                     >
                         <div className="flex items-center gap-2">
-                            <div className="relative w-5 h-5">
+                            <div className="relative w-6 h-4">
                                 <Image
                                     src={lang.flag}
                                     alt={lang.name}
-                                    className="rounded-full"
+                                    className="w-full h-full"
                                     fill
                                     sizes="20px"
                                 />

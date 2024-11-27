@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 
-import AboutImage from "@/assets/images/about-me.png";
+import MahbubImage from '@/assets/images/mahbub.jpg';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -33,87 +33,77 @@ const AboutSection = () => {
     };
 
     const imageVariants = {
-        hidden: { scale: 0.8, opacity: 0 },
+        hidden: { scale: 0.9, opacity: 0 },
         visible: {
             scale: 1,
             opacity: 1,
             transition: {
                 duration: 0.6,
-                ease: 'easeOut',
+                type: 'spring',
+                stiffness: 100,
             },
         },
     };
 
     const experienceVariants = {
-        hidden: { scale: 0.5, opacity: 0 },
+        hidden: { x: 50, opacity: 0 },
         visible: {
-            scale: 1,
+            x: 0,
             opacity: 1,
             transition: {
-                duration: 0.4,
-                ease: 'backOut',
+                type: 'spring',
+                stiffness: 120,
+                delay: 0.4,
             },
         },
     };
 
     return (
-        <div className="relative py-16">
+        <div className="relative py-16 bg-[#F8F9FA] dark:bg-[#0a0e1f]">
             <div className="container">
                 <motion.div
                     ref={ref}
                     initial="hidden"
                     animate={isInView ? 'visible' : 'hidden'}
                     variants={containerVariants}
-                    className=""
                 >
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <motion.div
                             variants={imageVariants}
-                            className="relative"
+                            className="relative group flex justify-center items-center"
                         >
-                            <div className="relative w-full aspect-square rounded-full overflow-hidden bg-purple-100">
+                            {/* Background Card */}
+                            <div className="absolute bg-purple-400 rounded-xl rotate-[0deg] w-[260px] h-[360px] shadow-lg"></div>
+
+                            {/* Foreground Image Card */}
+                            <div className="relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 group-hover:scale-105 bg-white w-[260px] h-[360px] rotate-[-8deg]">
                                 <Image
-                                    src={AboutImage}
+                                    src={MahbubImage}
                                     alt="Profile"
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className="rounded-full"
+                                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
                                 />
-                                {/* Experience Badge */}
-                                <motion.div
-                                    variants={experienceVariants}
-                                    className="absolute bottom-10 -right-4 bg-white rounded-2xl shadow-lg px-6 py-3"
-                                >
-                                    <p className="text-4xl font-bold text-indigo-600">
-                                        2+
-                                    </p>
-                                    <p className="text-sm text-gray-600">
-                                        Year's Experience
-                                    </p>
-                                </motion.div>
                             </div>
                         </motion.div>
 
-                        {/* Content Section */}
-                        <div className="space-y-8">
+                        <div className="space-y-6">
                             <motion.div variants={itemVariants}>
-                                <p className="text-emerald-500 font-medium text-lg mb-2">
+                                <p className="text-emerald-600 font-medium text-lg mb-2">
                                     About Me
                                 </p>
                             </motion.div>
 
                             <motion.div variants={itemVariants}>
-                                <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
                                     My passions are{' '}
                                     <span className="text-blue-600">
                                         coding
                                     </span>
                                     ,{' '}
-                                    <span className="text-emerald-500">
+                                    <span className="text-emerald-600 dark:text-emerald-400">
                                         creating
                                     </span>{' '}
                                     &{' '}
-                                    <span className="text-blue-400">
+                                    <span className="text-blue-500 dark:text-blue-400">
                                         innovating
                                     </span>
                                 </h2>
@@ -121,7 +111,7 @@ const AboutSection = () => {
 
                             <motion.div
                                 variants={itemVariants}
-                                className="prose prose-lg text-gray-600 max-w-none"
+                                className="text-gray-700 dark:text-gray-300 leading-relaxed"
                             >
                                 <p>
                                     Professional Front End Web Developer.
@@ -138,7 +128,7 @@ const AboutSection = () => {
                             </motion.div>
 
                             <motion.div variants={itemVariants}>
-                                <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
+                                <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 dark:bg-emerald-500 dark:hover:bg-emerald-600">
                                     Contact Me
                                 </button>
                             </motion.div>
