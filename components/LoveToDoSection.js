@@ -29,7 +29,7 @@ const LoveToDoSection = () => {
                     className="mb-12 text-center"
                 >
                     <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-                        <span className="text-transparent bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text">
+                        <span className="text-transparent bg-linear-to-r from-teal-500 to-blue-600 bg-clip-text">
                             Love To Do
                         </span>
                     </h2>

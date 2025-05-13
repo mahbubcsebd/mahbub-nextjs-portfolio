@@ -88,7 +88,7 @@ const HeroSection = () => {
                             </motion.div>
                         </div>
                         <div className="relative mt-8 lg:mt-0">
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600/20 to-emerald-500/20 blur-xl dark:from-purple-600/30 dark:to-emerald-500/30" />
+                            <div className="absolute inset-0 rounded-full bg-linear-to-r from-purple-600/20 to-emerald-500/20 blur-xl dark:from-purple-600/30 dark:to-emerald-500/30" />
                             <CodePreview />
                         </div>
                     </div>

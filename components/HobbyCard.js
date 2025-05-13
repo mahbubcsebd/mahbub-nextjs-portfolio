@@ -42,7 +42,7 @@ const HobbyCard = ({ hobby }) => {
                             className=""
                         />
                     </div>
-                    <h3 className="inline-block text-2xl font-semibold text-transparent bg-gradient-to-t from-gray-800 to-gray-400 bg-clip-text">
+                    <h3 className="inline-block text-2xl font-semibold text-transparent bg-linear-to-t from-gray-800 to-gray-400 bg-clip-text">
                         {hobby.title}
                     </h3>
                     {/* <p className="text-gray-400">

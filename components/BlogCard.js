@@ -13,7 +13,7 @@ const BlogCard = ({ date, title, description, image, index }) => {
             className="w-full rounded-xl overflow-hidden border border-zinc-800 transition-colors"
         >
             <div className="p-4 flex gap-4">
-                <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+                <div className="w-32 h-32 rounded-lg overflow-hidden shrink-0">
                     <Image
                         src={image}
                         alt={title}
@@ -21,7 +21,7 @@ const BlogCard = ({ date, title, description, image, index }) => {
                     />
                 </div>
 
-                <div className="flex flex-col flex-grow">
+                <div className="flex flex-col grow">
                     <span className="text-emerald-400 text-sm">{date}</span>
                     <h2 className="text-xl font-semibold text-white mt-2">
                         {title}

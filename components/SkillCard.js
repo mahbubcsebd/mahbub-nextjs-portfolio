@@ -19,7 +19,7 @@ const SkillCard = ({ skill, index }) => {
             className="relative group"
         >
             <div
-                className={`absolute inset-0 bg-gradient-to-tl ${skill.color} rounded-3xl blur-xl group-hover:scale-110 transition-transform duration-300`}
+                className={`absolute inset-0 bg-linear-to-tl ${skill.color} rounded-3xl blur-xl group-hover:scale-110 transition-transform duration-300`}
             />
             <div
                 className={`absolute inset-0 rounded-3xl blur-xl group-hover:scale-110 transition-transform duration-300`}

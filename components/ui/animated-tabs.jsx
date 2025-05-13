@@ -54,7 +54,7 @@ export default function AnimatedTabs({
                             setActiveIdx(index);
                         }}
                         className={cn(
-                            'group relative z-[1] rounded-full px-4 py-2',
+                            'group relative z-1 rounded-full px-4 py-2',
                             { 'z-0': activeIdx === index },
                             tabClassName
                         )}
