@@ -1,8 +1,8 @@
 'use client';
 
-import Resume from '@/components/Resume';
 import { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import Resume from '../../components/Resume';
 
 const ResumePage = () => {
         const contentRef = useRef();

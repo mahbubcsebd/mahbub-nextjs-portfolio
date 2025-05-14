@@ -1,27 +1,27 @@
-import { LanguageProvider } from '@/context/LanguageContext';
-import { ThemeProvider } from '@/provider/ThemeProvider';
+import { Inter } from 'next/font/google';
+
 import './globals.css';
-// import useDictionary from './hooks/useDictionary';
 
 export const metadata = {
-    title: 'ChatGPT',
-    description: 'I"m Mahbubur Rahman. I am a software engineer and a passionate learner.',
-};
+    title: 'Mahbub | Software Engineer',
+    description: 'Portfolio showcasing my projects, experience, and blog.',
+    openGraph: {
+      title: 'Mahbub Portfolio',
+      description: 'Built with Next.js 15',
+      url: 'https://mahbub.dev',
+      images: ['/og-image.png'],
+    },
+  };
+
+
+const inter = Inter({ subsets: ['latin'] });
+
 
 export default function RootLayout({ children }) {
   return (
       <html lang="en">
-          <body className={`antialiased bg-[#f5f5f5] dark:bg-[#0a0e1f]`}>
-              <LanguageProvider>
-                  <ThemeProvider
-                      attribute="class"
-                      defaultTheme="system"
-                      enableSystem
-                      disableTransitionOnChange
-                  >
-                      {children}
-                  </ThemeProvider>
-              </LanguageProvider>
+          <body className={`antialiased bg-[#f5f5f5] dark:bg-[#0a0e1f] ${inter.className}`}>
+              {children}
           </body>
       </html>
   );

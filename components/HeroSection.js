@@ -15,9 +15,9 @@ const HeroSection = () => {
         <div className="bg-[#F8F9FA] dark:bg-[#0a0e1f]">
             <div className="container">
                 <div className="flex items-center lg:min-h-screen">
-                    <div className="grid lg:grid-cols-2 items-center gap-8 lg:gap-12">
+                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
                         {/* Left Column - Text Content */}
-                        <div className="min-h-screen lg:min-h-auto grid items-center">
+                        <div className="grid items-center min-h-screen lg:min-h-auto">
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -56,14 +56,14 @@ const HeroSection = () => {
                                     </motion.span>
                                 </h1>
 
-                                <motion.p
+                                <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.4, duration: 0.6 }}
                                     className="text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg md:text-xl lg:text-2xl"
                                 >
                                     <TextGenerateEffect words={words} />
-                                </motion.p>
+                                </motion.div>
                                 <TypewriterComponent />
                                 <div className="flex items-start gap-4 sm:flex-row sm:items-center">
                                     <HoverBorderGradient
@@ -80,7 +80,7 @@ const HeroSection = () => {
                                     </HoverBorderGradient>
                                     <div className="relative overflow-hidden rounded-full dark:bg-zinc-900 bg-white shadow border dark:border-zinc-800 group border-zinc-400 p-0.5">
                                         <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite_reverse] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#fff_0%,#09090B_7%)] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#fff_5%)] group-hover:bg-none" />
-                                        <button className="w-full px-8 py-2 font-semibold rounded-full text-zinc-800 dark:text-zinc-200 backdrop-blur-xl bg-zinc-50 dark:bg-zinc-900 capitalize">
+                                        <button className="w-full px-8 py-2 font-semibold capitalize rounded-full text-zinc-800 dark:text-zinc-200 backdrop-blur-xl bg-zinc-50 dark:bg-zinc-900">
                                             About Me
                                         </button>
                                     </div>
