@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { educations } from '../_constants'
 
 const Educations = () => {

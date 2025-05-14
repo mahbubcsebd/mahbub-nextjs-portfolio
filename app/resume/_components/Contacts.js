@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { contactItems } from '../_constants'
 
 const Contacts = () => {

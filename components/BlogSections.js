@@ -1,41 +1,32 @@
-"use client"
+'use client';
 
-// import { DirectionAwareHover } from '@/components/ui/direction-aware-hover';
 import blogs from '@/constant/blogs';
-import { motion } from 'framer-motion';
-import BlogCard from "./BlogCard";
-
-
-
-
+import Link from 'next/link';
+import BlogCard from './BlogCard';
 
 const BlogSections = () => {
     return (
-        <div className="py-16">
+        <section className="py-16">
             <div className="container">
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-2xl font-bold text-emerald-400">
                         My Blogs
                     </h1>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="px-4 py-2 rounded-lg border border-emerald-400 text-emerald-400 text-sm"
-                    >
-                        View More
-                    </motion.button>
+
+                    <Link href="/blogs" aria-label="View more blog posts">
+                        <button className="px-4 py-2 text-sm transition duration-200 border rounded-lg border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white">
+                            View More
+                        </button>
+                    </Link>
                 </div>
 
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                     {blogs.map((blog, index) => (
-                        <BlogCard
-                            key={index}
-                            {...blog}
-                            index={index}
-                        />
+                        <BlogCard key={blog.id || index} {...blog} />
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

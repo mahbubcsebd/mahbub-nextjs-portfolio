@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { FaGithubAlt, FaRegEye } from 'react-icons/fa6'
 import { projects } from '../_constants'
 
 const Projects = () => {

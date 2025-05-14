@@ -42,7 +42,7 @@ const AboutAnimated = () => {
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
     >
-      <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+      <div className="relative grid items-center grid-cols-1 lg:grid-cols-2">
         {/* Image */}
         <motion.div
           variants={imageVariants}
@@ -65,7 +65,8 @@ const AboutAnimated = () => {
         </motion.div>
 
         {/* Text content */}
-        <div className="space-y-6">
+        <div className="relative pl-12 space-y-6">
+        <div className="absolute top-0 left-0 w-1 h-full bg-emerald-600"></div>
           <motion.div variants={itemVariants}>
             <p className="mb-2 text-lg font-medium text-emerald-600">
               About Me
@@ -94,10 +95,10 @@ const AboutAnimated = () => {
               Professional Front End Web Developer. Passionate and devoted to
               my job. With 2+ years of professional Front End Web Development
               experience, I have the abilities and expertise to succeed on any
-              project. I've helped numerous companies enhance their online
+              project. I have helped numerous companies enhance their online
               presence and aim to assist you create a great company website.
               Learning new technology and improving my skills is my passion.
-              I'm passionate about programming.
+              I am passionate about programming.
             </p>
           </motion.div>
 
