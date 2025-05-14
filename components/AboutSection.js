@@ -67,10 +67,10 @@ const AboutSection = () => {
                     animate={isInView ? 'visible' : 'hidden'}
                     variants={containerVariants}
                 >
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                         <motion.div
                             variants={imageVariants}
-                            className="relative group flex justify-center items-center"
+                            className="relative flex items-center justify-center group"
                         >
                             {/* Background Card */}
                             <div className="absolute bg-purple-400 rounded-xl rotate-[0deg] w-[260px] h-[360px] shadow-lg"></div>
@@ -80,20 +80,20 @@ const AboutSection = () => {
                                 <Image
                                     src={MahbubImage}
                                     alt="Profile"
-                                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
+                                    className="object-cover w-full h-full transition-transform duration-500 rounded-xl group-hover:scale-110"
                                 />
                             </div>
                         </motion.div>
 
                         <div className="space-y-6">
                             <motion.div variants={itemVariants}>
-                                <p className="text-emerald-600 font-medium text-lg mb-2">
+                                <p className="mb-2 text-lg font-medium text-emerald-600">
                                     About Me
                                 </p>
                             </motion.div>
 
                             <motion.div variants={itemVariants}>
-                                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
+                                <h2 className="mb-4 text-4xl font-bold text-gray-800 lg:text-5xl dark:text-white">
                                     My passions are{' '}
                                     <span className="text-blue-600">
                                         coding
@@ -111,7 +111,7 @@ const AboutSection = () => {
 
                             <motion.div
                                 variants={itemVariants}
-                                className="text-gray-700 dark:text-gray-300 leading-relaxed"
+                                className="leading-relaxed text-gray-700 dark:text-gray-300"
                             >
                                 <p>
                                     Professional Front End Web Developer.
@@ -128,7 +128,7 @@ const AboutSection = () => {
                             </motion.div>
 
                             <motion.div variants={itemVariants}>
-                                <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 dark:bg-emerald-500 dark:hover:bg-emerald-600">
+                                <button className="px-8 py-3 font-medium text-white transition-colors duration-200 rounded-lg bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600">
                                     Contact Me
                                 </button>
                             </motion.div>
