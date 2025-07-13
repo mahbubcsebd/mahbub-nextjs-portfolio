@@ -1,4 +1,6 @@
-import { projects } from '../_constants'
+import Link from 'next/link'
+import { FaGithubAlt, FaRegEye } from 'react-icons/fa6'
+import { projects } from '../resume-two/_constants'
 
 const Projects = () => {
   return (

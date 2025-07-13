@@ -1,4 +1,5 @@
-import { educations } from '../_constants'
+import Link from 'next/link'
+import { educations } from '../resume-two/_constants'
 
 const Educations = () => {
   return (

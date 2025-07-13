@@ -1,12 +1,70 @@
 {
-    "Header": {
-        "nameLogo": "mahbub",
-        "hireMe": "hire me",
-        "Menu": {
-            "home": "home",
-            "aboutMe": "about me",
-            "portfolio": "portfolio",
-            "contact": "contact"
-        }
+  "Header": {
+    "nameLogo": "mahbub",
+    "hireMe": "hire me",
+    "Menu": {
+      "home": "home",
+      "aboutMe": "about me",
+      "portfolio": "portfolio",
+      "contact": "contact"
     }
+  },
+  "HeroSection": {
+    "hello": "Hello!",
+    "iAm": "I'm",
+    "name": "Mahbubur Rahman",
+    "words": "Transforming ideas into elegant web solutions with React, Next.js, and Node.js. Passionate about intuitive user experiences and optimized performance.",
+    "react": "React JS Developer",
+    "nextjs": "Next JS Developer",
+    "nodejs": "Node JS Developer",
+    "mern": "MERN Stack Developer",
+    "frontend": "Frontend Developer",
+    "resume": "Resume",
+    "aboutMe": "About Me"
+  },
+  "Contact": {
+    "getInTouch": "Get In Touch",
+    "openDiscussion": "I'm Always Open To Discussing",
+    "description": "Let's have a chat, tell me about your project and I'll give you some suggestions",
+    "callNow": "Call Now",
+    "email": "Email",
+    "Form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "emailLabel": "youremail@gmail.com",
+      "phone": "+880 17 XXXX XXXX",
+      "message": "Leave me a message",
+      "submitButton": "Send Message",
+      "successMessage": "Message Sent Successfully"
+    }
+  },
+  "AboutMe": {
+    "title": "About Me",
+    "sectionTitle": "About Me",
+    "myPassion": " My passions are",
+    "coding": "Coding",
+    "creating": "Creating",
+    "innovating": "& innovating",
+    "description": "Professional Front End Web Developer. Passionate and devoted to my job. With 4+ years of professional Front End Web Development experience, I have the abilities and expertise to succeed on any project. I have helped numerous companies enhance their online presence and aim to assist you create a great company website. Learning new technology and improving my skills is my passion. I am passionate about programming.",
+    "contactMe": "Contact Me"
+  },
+  "Portfolio": {
+    "sectionTitle": "Portfolio"
+  },
+  "Testimonial": {
+    "sectionTitle": "Testimonial"
+  },
+  "Blog": {
+    "sectionTitle": "My Blogs"
+  },
+  "Love": {
+    "travelling": "Traveling",
+    "mountainHiking": "Mountain Hiking",
+    "photography": "Photography",
+    "movieWatching": "Movie Watching"
+  },
+  "Footer": {
+    "allRights": "All rights reserved by",
+    "name": "Mahbub"
+  }
 }

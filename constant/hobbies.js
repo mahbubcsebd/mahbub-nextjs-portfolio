@@ -1,7 +1,13 @@
+import useDictionary from '@/hooks/useDictionary';
+
 import MountainHiking from '@/assets/icons/mountain-hiking.svg';
 import MovieWatching from '@/assets/icons/movie-watching.svg';
 import Photography from '@/assets/icons/photography.svg';
 import Travelling from '@/assets/icons/travelling.svg';
+
+const dictionary = useDictionary();
+
+
 
 const hobbies = [
     {
