@@ -13,21 +13,13 @@ const ResumePage = () => {
   });
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[#0a0e1f]">
+      <div className="max-w-4xl mx-auto md:py-10">
         <div className="border border-gray-700 ">
           <div ref={contentRef} className="">
             <Resume handlePrint={handlePrint} />
           </div>
         </div>
-        {/* <div className="flex justify-end gap-4 mb-4">
-                    <Button
-                        onClick={handlePrint}
-                        className="bg-blue-600 hover:bg-blue-700"
-                    >
-                        Download PDF
-                    </Button>
-                </div> */}
       </div>
     </div>
   );

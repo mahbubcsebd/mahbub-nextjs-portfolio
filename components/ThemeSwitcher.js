@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
     <button
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="flex items-center justify-center w-10 h-10 transition-colors bg-white border border-gray-200 rounded-md dark:border-gray-700 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-700"
+      className="flex items-center justify-center w-10 h-10 transition-colors bg-white border border-gray-200 rounded-md dark:border-gray-700 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-700 cursor-pointer"
     >
       {mounted ? (
         theme === 'dark' ? (

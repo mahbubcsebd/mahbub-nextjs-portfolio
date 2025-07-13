@@ -3,11 +3,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const BlogCard = ({ date, title, description, image }) => {
   return (
     <motion.div
-      className="w-full overflow-hidden transition-all duration-300 border rounded-xl border-zinc-800 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-400/10"
+      className="w-full overflow-hidden transition-all duration-300 bg-white border border-white shadow-lg dark:bg-transparent rounded-xl dark:border-zinc-800 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-400/10 dark:hover:border-emerald-400 dark:hover:shadow-emerald-400/20"
       whileHover={{ y: -5 }}
     >
       <div className="flex flex-col gap-4 p-4 sm:flex-row">
@@ -26,10 +27,13 @@ const BlogCard = ({ date, title, description, image }) => {
         {/* Content Container */}
         <div className="flex flex-col flex-1">
           <span className="text-xs sm:text-sm text-emerald-400">{date}</span>
-          <h2 className="mt-1 text-lg font-semibold text-white sm:mt-2 sm:text-xl line-clamp-2">
+          <Link
+            href="#"
+            className="mt-1 text-lg font-semibold text-gray-900 dark:text-white sm:mt-2 sm:text-xl line-clamp-2"
+          >
             {title}
-          </h2>
-          <p className="mt-2 text-xs text-gray-400 sm:text-sm line-clamp-2 sm:line-clamp-3">
+          </Link>
+          <p className="mt-2 text-xs text-gray-600 dark:text-gray-400 sm:text-sm line-clamp-2 sm:line-clamp-3">
             {description}
           </p>
 
@@ -37,7 +41,7 @@ const BlogCard = ({ date, title, description, image }) => {
             whileHover={{ x: 5 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-            className="flex items-center gap-2 mt-3 text-xs text-white sm:mt-4 sm:text-sm w-fit"
+            className="flex items-center gap-2 mt-3 text-xs text-blue-800 transition-all duration-300 cursor-pointer dark:text-blue-500 hover:underline sm:mt-4 sm:text-sm w-fit"
           >
             Read More
             <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />

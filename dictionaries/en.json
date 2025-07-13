@@ -51,6 +51,9 @@
   "Portfolio": {
     "sectionTitle": "Portfolio"
   },
+  "Skills": {
+    "sectionTitle": "Skills"
+  },
   "Testimonial": {
     "sectionTitle": "Testimonial"
   },
@@ -58,6 +61,7 @@
     "sectionTitle": "My Blogs"
   },
   "Love": {
+    "sectionTitle": "What I Love To Do",
     "travelling": "Traveling",
     "mountainHiking": "Mountain Hiking",
     "photography": "Photography",

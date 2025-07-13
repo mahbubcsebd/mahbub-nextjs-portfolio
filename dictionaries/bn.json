@@ -19,7 +19,7 @@
     "nodejs": "Node JS ডেভেলপার",
     "mern": "MERN Stack ডেভেলপার",
     "frontend": "ফ্রন্টএন্ড ডেভেলপার",
-    "resume": "জীবনবৃত্তান্ত দেখুন",
+    "resume": "জীবনবৃত্তান্ত",
     "aboutMe": "আমার সম্পর্কে"
   },
   "Contact": {
@@ -50,6 +50,9 @@
   },
   "Portfolio": {
     "sectionTitle": "পোর্টফোলিও"
+  },
+  "Skills": {
+    "sectionTitle": "Skills"
   },
   "Testimonial": {
     "sectionTitle": "গ্রাহক মতামত"

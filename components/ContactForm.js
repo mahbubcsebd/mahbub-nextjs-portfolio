@@ -81,7 +81,7 @@ const ContactForm = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Card className="border-gray-700 bg-gray-800/50 backdrop-blur">
+        <Card className="bg-white border border-gray-300 dark:border-gray-700 dark:bg-gray-800/50 backdrop-blur">
           <CardContent className="p-6">
             <form
               ref={form}
@@ -94,20 +94,14 @@ const ContactForm = () => {
                     {...register('firstName')}
                     name="firstName"
                     placeholder={firstName}
-                    className={`bg-gray-700/50 border-gray-600 text-white ${
+                    className={`bg-white dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 text-black dark:text-white ${
                       errors.firstName ? 'border-red-500' : ''
                     }`}
                   />
                   {errors.firstName && (
                     <motion.p
-                      initial={{
-                        opacity: 0,
-                        y: -10,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
                       className="mt-1 text-sm text-red-500"
                     >
                       {errors.firstName.message}
@@ -120,20 +114,14 @@ const ContactForm = () => {
                     {...register('lastName')}
                     name="lastName"
                     placeholder={lastName}
-                    className={`bg-gray-700/50 border-gray-600 text-white ${
+                    className={`bg-white dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 text-black dark:text-white ${
                       errors.lastName ? 'border-red-500' : ''
                     }`}
                   />
                   {errors.lastName && (
                     <motion.p
-                      initial={{
-                        opacity: 0,
-                        y: -10,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
                       className="mt-1 text-sm text-red-500"
                     >
                       {errors.lastName.message}
@@ -148,7 +136,7 @@ const ContactForm = () => {
                   name="email"
                   type="email"
                   placeholder={emailLabel}
-                  className={`bg-gray-700/50 border-gray-600 text-white ${
+                  className={`bg-white dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 text-black dark:text-white ${
                     errors.email ? 'border-red-500' : ''
                   }`}
                 />
@@ -168,7 +156,7 @@ const ContactForm = () => {
                   {...register('phone')}
                   name="phone"
                   placeholder={phone}
-                  className={`bg-gray-700/50 border-gray-600 text-white ${
+                  className={`bg-white dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 text-black dark:text-white ${
                     errors.phone ? 'border-red-500' : ''
                   }`}
                 />
@@ -188,7 +176,7 @@ const ContactForm = () => {
                   {...register('message')}
                   name="message"
                   placeholder={message}
-                  className={`bg-gray-700/50 border-gray-600 text-white h-32 ${
+                  className={`bg-white dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 text-black dark:text-white h-32 ${
                     errors.message ? 'border-red-500' : ''
                   }`}
                 />

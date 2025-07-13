@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
   return (
     <div className="relative">
       <Select value={language} onValueChange={changeLanguage}>
-        <SelectTrigger className="w-24 h-10 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-700 transition-colors focus:ring-0 focus:ring-offset-0 focus:outline-none [&[data-state=open]]:ring-0 [&[data-state=open]]:ring-offset-0">
+        <SelectTrigger className="w-24 h-10 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-700 transition-colors focus:ring-0 focus:ring-offset-0 focus:outline-none [&[data-state=open]]:ring-0 [&[data-state=open]]:ring-offset-0 cursor-pointer">
           <div className="flex items-center gap-2">
             <div
               className="relative overflow-hidden shrink-0"

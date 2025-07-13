@@ -22,23 +22,25 @@ const ContactInfo = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-2 text-lg font-medium text-purple-500"
+          className="mb-2 text-lg font-medium text-pink-500"
         >
           {getInTouch}
         </motion.h2>
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mb-4 text-4xl font-bold text-white md:text-5xl"
+          className="mb-4 text-4xl font-bold md:text-5xl"
         >
-          {openDiscussion}
-        </motion.h1>
+          <span className="text-transparent bg-linear-to-r from-teal-500 to-blue-600 bg-clip-text">
+            {openDiscussion}
+          </span>
+        </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-lg text-gray-400"
+          className="text-lg text-gray-600 dark:text-gray-400"
         >
           {description}
         </motion.p>
@@ -53,12 +55,14 @@ const ContactInfo = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="p-4 bg-purple-600 rounded-full">
+          <div className="p-4 rounded-full bg-emerald-400">
             <PhoneIcon className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="font-medium text-white">{callNow}</h3>
-            <p className="text-gray-400">+880 188622 5492</p>
+            <h3 className="font-medium text-gray-800 dark:text-white">
+              {callNow}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">+880 188622 5492</p>
           </div>
         </motion.a>
 
@@ -70,12 +74,16 @@ const ContactInfo = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <div className="p-4 bg-purple-600 rounded-full">
+          <div className="p-4 rounded-full bg-emerald-400">
             <MailIcon className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="font-medium text-white">{email}</h3>
-            <p className="text-gray-400">mahbub.cse.me@gmail.com</p>
+            <h3 className="font-medium text-gray-800 dark:text-white">
+              {email}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              mahbub.cse.me@gmail.com
+            </p>
           </div>
         </motion.a>
       </div>

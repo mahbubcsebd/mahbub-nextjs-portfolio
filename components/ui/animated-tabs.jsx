@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
@@ -10,6 +12,7 @@ export default function AnimatedTabs({
   tabClassName,
 }) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [[page, direction], setPage] = useState([0, 0]);
 
   const contentVariants = {
     enter: (direction) => ({
@@ -25,8 +28,6 @@ export default function AnimatedTabs({
       opacity: 0,
     }),
   };
-
-  const [[page, direction], setPage] = useState([0, 0]);
 
   const paginate = (newDirection) => {
     const newPage = activeIdx + newDirection;
@@ -84,12 +85,7 @@ export default function AnimatedTabs({
       </div>
 
       {/* Tab Content */}
-      <div
-        className={cn(
-          'relative mt-6 overflow-x-hidden min-h-[300px]',
-          tabContentClassName
-        )}
-      >
+      <div className={cn('relative mt-6 overflow-hidden', tabContentClassName)}>
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={page}
@@ -102,19 +98,7 @@ export default function AnimatedTabs({
               x: { type: 'spring', stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 },
             }}
-            className="absolute left-0 right-0 w-full"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
-
-              if (swipe < -swipeConfidenceThreshold) {
-                paginate(1);
-              } else if (swipe > swipeConfidenceThreshold) {
-                paginate(-1);
-              }
-            }}
+            className="w-full"
           >
             <div className="py-4 rounded-lg">{tabs[activeIdx].content}</div>
           </motion.div>
@@ -124,7 +108,6 @@ export default function AnimatedTabs({
   );
 }
 
-// Swipe helpers
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
