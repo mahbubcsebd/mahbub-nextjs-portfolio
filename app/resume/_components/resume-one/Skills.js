@@ -1,4 +1,4 @@
-import { skills } from '../_constants'
+import { skills } from '../resume-two/_constants'
 
 const Skills = () => {
   return (

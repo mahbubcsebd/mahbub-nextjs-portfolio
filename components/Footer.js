@@ -1,16 +1,20 @@
 'use client';
+import useDictionary from '@/hooks/useDictionary';
 
 import { motion } from 'framer-motion';
 import {
-    Facebook,
-    Instagram,
-    Linkedin,
-    Music,
-    Twitter,
-    Youtube,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Music,
+  Twitter,
+  Youtube,
 } from 'lucide-react';
 
 const Footer = () => {
+  const { dictionary } = useDictionary();
+
+  const { allRights, name } = dictionary.Footer;
   const socialLinks = [
     { icon: <Youtube className="w-5 h-5" />, href: '#', label: 'YouTube' },
     { icon: <Twitter className="w-5 h-5" />, href: '#', label: 'Twitter' },
@@ -31,8 +35,8 @@ const Footer = () => {
       <div className="container px-4 mx-auto">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <span className="text-sm text-center text-zinc-500 md:text-left">
-            © All rights reserved by{' '}
-            <span className="font-semibold text-white">Mahbub</span>
+            © {allRights}{' '}
+            <span className="font-semibold text-white">{name}</span>
           </span>
           <div className="flex items-center gap-6">
             {socialLinks.map((social, index) => (

@@ -13,10 +13,13 @@ const AboutAnimated = dynamic(() => import('./AboutAnimated'), {
 
 export default function AboutSection() {
   return (
-    <section className="relative py-16 bg-[#F8F9FA] dark:bg-[#0a0e1f]">
+    <div
+      id="about"
+      className="relative mb-14 lg:my-16 bg-[#F8F9FA] dark:bg-[#0a0e1f]"
+    >
       <div className="container">
         <AboutAnimated />
       </div>
-    </section>
+    </div>
   );
 }

@@ -4,15 +4,14 @@ import {
     FaGithub,
     FaGlobe,
     FaLinkedinIn,
-    FaPhoneFlip,
-    FaSkype
+    FaPhoneFlip
 } from 'react-icons/fa6';
 
  const contactItems = [
         {
             type: 'website',
             icon: <FaGlobe />,
-            value: 'Mahbubur Rahman',
+            value: 'Portfolio',
             link: '#',
         },
         {
@@ -28,6 +27,12 @@ import {
             link: '#',
         },
         {
+            type: 'address',
+            icon: <FaMapMarkerAlt />,
+            value: 'Dhaka-1215, Bangladesh',
+            link: 'https://www.google.com/maps/search/?api=1&query=Farmgate+Tejgaon+Dhaka+1215',
+        },
+        {
             type: 'email',
             icon: <FaEnvelope />,
             value: 'mahbub.cse.me@gmail.com',
@@ -39,34 +44,16 @@ import {
             value: '+880 188622 5492',
             link: 'tel:+8801886225492',
         },
-        {
-            type: 'skype',
-            icon: <FaSkype />,
-            value: 'mahbubcsebd',
-            link: 'skype:mahbubcsebd?chat',
-        },
-        {
-            type: 'address',
-            icon: <FaMapMarkerAlt />,
-            value: 'Dhaka-1215, Bangladesh',
-            link: 'https://www.google.com/maps/search/?api=1&query=Farmgate+Tejgaon+Dhaka+1215',
-        },
     ];
 
     const skills = [
-        'JavaScript (ES6+)',
-        'React.js',
-        'Next.js',
-        'Tailwind CSS, Bootstrap, Material-UI',
-        'Version Control (Git/GitHub)',
-        'RESTful APIs',
-        'Basic Node.js, Express.js,',
-        'MongoDB & Mongoose',
-        'Authentication (JWT, OAuth)',
-        'JSON & Axios',
-        'Redux, Context API',
-        'Agile Methodology',
-    ];
+        { category: 'Frontend', items: ['JavaScript (ES6+)', 'React.js', 'Next.js', 'Vue', 'Nuxt'] },
+        { category: 'State Management', items: ['Redux', 'Context API'] },
+        { category: 'Styling', items: ['Tailwind CSS', 'Bootstrap', 'Material-UI'] },
+        { category: 'Backend', items: ['Node.js (Basic)', 'Express.js'] },
+        { category: 'Database', items: ['MongoDB'] },
+        { category: 'Version Control', items: ['Git'] },
+      ];
 
     const experiences = [
         {
@@ -76,9 +63,11 @@ import {
             duration: 'Dec 2022 - Present',
             url: 'https://uibarn.com',
             descriptions: [
-                'Norway based software company.',
-                'Working with Miros Group web application.',
+                'Led complete frontend architecture and development for high-impact projects like UiBarn (Vue/Nuxt), Karbar, and Abaya (React/Next.js), delivering scalable, performance-optimized solutions',
+                'Engineered modular, scalable UI systems with a strong focus on performance, maintainability, and reusability.',
+                'Developed and published production-ready React and HTML templates on ThemeForest, successfully approved and released.',
             ],
+            // Engineered dynamic, modular UI systems with a focus on performance, scalability, and maintainability.
         },
         {
             id: 2,
@@ -87,10 +76,9 @@ import {
             duration: 'Dec 2020 - Nov 2022',
             url: 'https://luminouslabsbd.com',
             descriptions: [
-                'Norway based software company.',
-                'Working with Miros Group web application.',
-                'Norway based software company.',
-                'Working with Miros Group web application.',
+                'Worked on Droptienda, a custom-built CRM system — created layouts, modules, and fixed UI issues.',
+                'Designed and shipped production-ready frontend templates for ThemeForest (HTML, CSS, JS).',
+                'Developed responsive interfaces for multiple client projects, focusing on performance and usability.',
             ],
         },
     ];
@@ -100,16 +88,16 @@ import {
             id: 1,
             institution: 'Sonargaon University',
             degree: 'Bachelor of Science in Computer Science and Engineering',
-            duration: '2015 - 2019',
-            url: 'https://uit.ac.bd',
+            duration: 'continuing',
+            url: 'https://sonargaon.edu.bd',
         },
-        {
-            id: 2,
-            institution: 'Dr. Khandaker Mosarraf Hossain College',
-            degree: 'Higher Secondary Certificate',
-            duration: '2013 - 2015',
-            url: 'https://uit.ac.bd',
-        },
+        // {
+        //     id: 2,
+        //     institution: 'Dr. Khandaker Mosarraf Hossain College',
+        //     degree: 'Higher Secondary Certificate',
+        //     duration: '2013 - 2015',
+        //     url: 'https://uit.ac.bd',
+        // },
     ];
 
     const projects = [

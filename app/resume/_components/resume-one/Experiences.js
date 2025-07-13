@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { experiences } from '../_constants'
+import { experiences } from '../resume-two/_constants'
 
 const Experiences = () => {
   return (

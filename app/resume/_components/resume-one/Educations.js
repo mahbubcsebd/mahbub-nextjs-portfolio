@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { educations } from '../_constants'
+import { educations } from '../resume-two/_constants'
 
 const Educations = () => {
   return (
