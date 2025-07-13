@@ -31,8 +31,10 @@ const Project = () => {
         </div>
         <div className="flex justify-center mt-10">
           <Link
-            href="/projects"
-            className="inline-block px-6 py-3 text-sm font-semibold text-center text-white rounded-lg bg-emerald-500 hover:bg-emerald-600"
+            href="https://github.com/mahbubcsebd?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 text-sm font-semibold text-center transition-all duration-300 border rounded-lg text-emerald-600 hover:text-white hover:bg-emerald-500 border-emerald-500"
           >
             View All Projects
           </Link>

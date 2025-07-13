@@ -12,7 +12,7 @@ const contactItems = [
     type: 'website',
     icon: <FaGlobe />,
     value: 'Portfolio',
-    link: '#',
+    link: 'https://mahbub-dev.vercel.app',
   },
   {
     type: 'github',
@@ -24,7 +24,7 @@ const contactItems = [
     type: 'linkedin',
     icon: <FaLinkedinIn />,
     value: 'linkedin/mahbubcsebd',
-    link: '#',
+    link: 'https://www.linkedin.com/in/mahbubcseme/',
   },
   {
     type: 'address',
@@ -114,8 +114,9 @@ const projects = [
     id: 1,
     name: 'Karbar',
     techStack: ['React 19', 'Next.js 15', 'Tailwind CSS', 'shadcn/ui'],
-    liveUrl: 'https://portfolio.example.com',
-    githubUrl: 'https://github.com/username/karbar',
+    liveUrl: 'https://karbar.shop',
+    githubUrl:
+      'https://gitlab.com/karbar-shop/theme/grocery-food-delivery/template-one',
     summary:
       'A theme platform (on subscription-based eCommerce) that comes with theme management and POS integration, powerful analytics, team and agency management and enterprise-grade features.',
 
@@ -159,7 +160,8 @@ const projects = [
     id: 3,
     name: 'Abaya',
     techStack: ['React.js', 'Next.js', 'Tailwind CSS'],
-    liveUrl: 'https://abaya.example.com', // replace with actual link if available
+    liveUrl: 'https://abayaa.shop',
+    githubUrl: 'https://gitlab.com/barn-client-project/abaya-avenue-shop-next',
     summary:
       'A fast niche eCommerce platform for abaya and modest fashion meant to deliver high performance and user experience.',
 

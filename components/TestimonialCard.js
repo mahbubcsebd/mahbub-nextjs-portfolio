@@ -6,7 +6,7 @@ import Image from 'next/image';
 const TestimonialCard = ({ testimonial }) => {
   return (
     <div className="w-full">
-      <Card className="text-white border-0 backdrop-sepia-0 bg-white/10 md:border">
+      <Card className="text-gray-900 bg-white border-0 border-gray-200 backdrop-sepia-0 dark-text-white dark:bg-white/10 md:border">
         <CardContent className="p-4 md:p-6">
           <div className="flex flex-col items-center gap-4 md:flex-row md:gap-6">
             {/* Image Section - Now centered and full width on mobile */}
@@ -35,14 +35,14 @@ const TestimonialCard = ({ testimonial }) => {
               <h3 className="mb-2 text-xl font-semibold md:text-2xl text-emerald-400">
                 "{testimonial.quote}"
               </h3>
-              <p className="mb-3 text-sm text-gray-300 md:mb-4 md:text-base">
+              <p className="mb-3 text-sm text-gray-500 dark:text-gray-300 md:mb-4 md:text-base">
                 {testimonial.content}
               </p>
               <div>
-                <p className="text-sm font-semibold md:text-base">
+                <p className="text-sm font-semibold text-gray-700 md:text-base dark:text-gray-300">
                   {testimonial.name}
                 </p>
-                <p className="text-xs text-gray-400 md:text-sm">
+                <p className="text-xs text-gray-500 dark:text-gray-400 md:text-sm">
                   {testimonial.role}
                 </p>
               </div>

@@ -14,7 +14,7 @@ const ProjectCard = ({ project }) => {
       viewport={{ once: true }}
       className="h-full group"
     >
-      <Card className="flex flex-col h-full overflow-hidden text-white transition-all duration-300 bg-zinc-900 border-zinc-800 hover:border-zinc-700">
+      <Card className="flex flex-col h-full overflow-hidden text-white transition-all duration-300 bg-white border-gray-300 hover:border-gray-200 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-700">
         {/* Clickable Image */}
         <Link
           href={project.link || '#'}
@@ -22,25 +22,21 @@ const ProjectCard = ({ project }) => {
           rel="noopener noreferrer"
           className="relative overflow-hidden aspect-video"
         >
-          <motion.div
-            className="w-full h-full"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
+          <motion.div className="w-full h-full">
             <Image
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full duration-300 ransition-all hover:scale-105"
             />
           </motion.div>
         </Link>
 
         <div className="flex flex-col flex-grow">
           <CardHeader>
-            <p className="text-sm text-zinc-400">{project.version}</p>
+            {/* <p className="text-sm text-zinc-400">{project.version}</p> */}
             {/* Clickable Title */}
-            <CardTitle className="mt-1 text-xl font-bold">
+            <CardTitle className="text-xl font-bold text-gray-800 hover:text-gray-900 dark:text-zinc-300 dark:hover:text-zinc-900">
               <Link
                 href={project.link || '#'}
                 target="_blank"
@@ -52,7 +48,7 @@ const ProjectCard = ({ project }) => {
           </CardHeader>
 
           <CardContent className="flex flex-col justify-between flex-grow">
-            <p className="flex-grow mb-4 text-sm text-zinc-400">
+            <p className="flex-grow mb-4 text-sm text-gray-600 dark:text-zinc-400">
               {project.description}
             </p>
 
@@ -61,7 +57,7 @@ const ProjectCard = ({ project }) => {
                 {project.techs.map((tech) => (
                   <div
                     key={tech}
-                    className="flex items-center justify-center w-8 h-8 p-1 border rounded-sm border-zinc-700 backdrop-sepia bg-white/10"
+                    className="flex items-center justify-center w-8 h-8 p-1 border border-gray-100 rounded-sm shadow-sm dark:border-zinc-700 backdrop-sepia bg-white/10"
                     title={tech}
                   >
                     <Image
@@ -85,7 +81,7 @@ const ProjectCard = ({ project }) => {
                 >
                   <FaGithub
                     size={24}
-                    className="transition-colors text-zinc-400 hover:text-white"
+                    className="text-gray-600 transition-colors hover:text-gray-800 dark:text-zinc-400 dark:hover:text-white"
                   />
                 </Link>
               )}

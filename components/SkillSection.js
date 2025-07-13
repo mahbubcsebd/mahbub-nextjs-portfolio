@@ -1,6 +1,7 @@
 'use client';
 
 import skills from '@/constant/skills';
+import useDictionary from '@/hooks/useDictionary';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import SkillCard from './SkillCard';
@@ -26,6 +27,8 @@ const TabContent = ({ category }) => {
 const SkillsSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { dictionary } = useDictionary();
+  const { sectionTitle } = dictionary.Skills;
 
   const tabsCont = [
     {
@@ -49,6 +52,18 @@ const SkillsSection = () => {
   return (
     <div ref={sectionRef} className="mb-14 lg:my-16">
       <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 text-center"
+        >
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            <span className="text-transparent bg-linear-to-r from-teal-500 to-blue-600 bg-clip-text">
+              {sectionTitle}
+            </span>
+          </h2>
+        </motion.div>
         <AnimatedTabs
           tabs={tabsCont}
           containerClassName="justify-start"

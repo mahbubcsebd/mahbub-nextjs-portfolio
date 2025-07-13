@@ -1,14 +1,9 @@
-"use client";
+'use client';
 
-import logo from "@/assets/icons/logo.svg";
+import logo from '@/assets/icons/logo.svg';
 import useDictionary from '@/hooks/useDictionary';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-    Briefcase,
-    Home,
-    Mail,
-    UserRound
-} from "lucide-react";
+import { Briefcase, Home, Mail, UserRound } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -54,7 +49,7 @@ const Header = () => {
   const menuVariants = {
     closed: {
       opacity: 0,
-      x: "100%",
+      x: '100%',
       transition: {
         duration: 0.2,
         staggerChildren: 0.1,
@@ -84,11 +79,17 @@ const Header = () => {
   };
 
   return (
-    <header id="header" className="header fixed w-full z-50 bg-[#F8F9FA] dark:bg-[#0a0e1f]">
+    <header
+      id="header"
+      className="header fixed w-full z-50 bg-[#F8F9FA] dark:bg-[#0a0e1f]"
+    >
       <div className="py-4 border-b border-gray-300 header-area dark:border-gray-900">
         <div className="container">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/" className="flex items-center gap-1 text-2xl font-semibold text-gray-400 capitalize">
+            <Link
+              href="/"
+              className="flex items-center gap-1 text-2xl font-semibold text-gray-400 capitalize"
+            >
               <span className="w-10 overflow-hidden">
                 <Image src={logo} alt="logo" className="w-full h-full" />
               </span>
@@ -99,7 +100,7 @@ const Header = () => {
               {navMenus.map((menu) => (
                 <li key={menu.id}>
                   <Link
-                    className="flex items-center gap-1 text-lg font-normal text-gray-500 capitalize transition-all duration-150 hover:text-gray-400"
+                    className="flex items-center gap-1 text-lg font-normal text-gray-800 capitalize transition-all duration-150 dark:text-gray-500 dark:hover:text-gray-400 hover:text-gray-900"
                     href={menu.url}
                     onClick={() => setIsOpen(false)}
                   >
