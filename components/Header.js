@@ -120,8 +120,12 @@ const Header = () => {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-2xl text-gray-500 md:hidden"
+                aria-label={isOpen ? 'Close menu' : 'Open menu'}
               >
                 {isOpen ? <RxCross1 /> : <RiMenu3Line />}
+                <span className="sr-only">
+                  {isOpen ? 'Close menu' : 'Open menu'}
+                </span>
               </button>
             </div>
           </div>

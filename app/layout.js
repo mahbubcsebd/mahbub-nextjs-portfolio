@@ -6,16 +6,63 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' }); // Use CSS variable for stability
 
 export async function generateMetadata() {
-  const demoData = {
-    title: 'Mahbubur Rahman | Full Stack Developer',
-    footer_description:
-      'Professional web developer specializing in React, Next.js, Node.js, and modern web technologies. Building performant and accessible web applications.',
-    website: 'https://mahbubur.dev',
-    header_logo: '/logo.png',
-    fev_icon: '/favicon.ico',
+  const professionalProfile = {
+    personalInfo: {
+      fullName: 'Mahbubur Rahman',
+      firstName: 'Mahbubur',
+      lastName: 'Rahman',
+      jobTitle: 'Full Stack Developer',
+      location: 'Dhaka, Bangladesh',
+      email: 'contact@mahbub-dev.vercel.app',
+      gender: 'male',
+    },
+    professionalDetails: {
+      specialization: 'React, Next.js, Node.js Specialist',
+      techStack: 'React, Next.js, Node.js, TypeScript',
+      employmentStatus: 'Software Engineer',
+      yearsOfExperience: '4+ years',
+    },
+    siteConfig: {
+      siteTitle: 'Mahbubur Rahman | Full Stack Developer Portfolio',
+      siteDescription:
+        'Professional web developer specializing in React, Next.js, Node.js, and modern web technologies. Building performant and accessible web applications.',
+      siteUrl: 'https://mahbub-dev.vercel.app',
+      canonicalUrl: 'https://mahbub-dev.vercel.app',
+      twitterHandle: '@mahbubur_dev',
+    },
+    assets: {
+      logo: {
+        url: '/logo.svg',
+        dimensions: { width: 1200, height: 630 },
+      },
+      favicon: '/favicon.ico',
+      profileImage: {
+        url: '/mahbub.png',
+        dimensions: { width: 1200, height: 1200 },
+      },
+      openGraphImage: {
+        url: '/og-image.png',
+        dimensions: { width: 1200, height: 630 },
+      },
+      twitterCardImage: '/twitter-card.png',
+      appleTouchIcon: '/apple-touch-icon.png',
+      safariPinnedTab: {
+        url: '/safari-pinned-tab.svg',
+        color: '#5bbad5',
+      },
+      msTileImage: '/mstile-144x144.png',
+    },
+    verification: {
+      google: 'google-site-verification=yourcode',
+      yandex: 'yandex-verification=yourcode',
+    },
+    uiSettings: {
+      themeColor: '#ffffff',
+      msTileColor: '#2b5797',
+    },
   };
 
-  const generateKeywords = (text) =>
+  const generateSearchKeywords = (text) =>
     text
       ?.toLowerCase()
       ?.replace(/[^a-z0-9\s]/g, '')
@@ -23,51 +70,93 @@ export async function generateMetadata() {
       ?.filter((word) => word.length > 2)
       ?.join(', ') || '';
 
-  const titleKeywords = generateKeywords(demoData.title);
-  const descKeywords = generateKeywords(demoData.footer_description);
+  const titleKeywords = generateSearchKeywords(
+    professionalProfile.siteConfig.siteTitle
+  );
+  const descKeywords = generateSearchKeywords(
+    professionalProfile.siteConfig.siteDescription
+  );
 
   return {
+    metadataBase: new URL(professionalProfile.siteConfig.siteUrl),
+
     title: {
-      default: demoData.title,
-      template: `%s | ${demoData.title}`,
+      default: professionalProfile.siteConfig.siteTitle,
+      template: `%s | ${professionalProfile.personalInfo.fullName}`,
     },
-    description: demoData.footer_description,
-    keywords: `${titleKeywords}, ${descKeywords}, web developer, portfolio, react developer, next.js, node.js, full stack developer, bangladesh developer`,
-    metadataBase: new URL(demoData.website),
+
+    description: professionalProfile.siteConfig.siteDescription,
+
+    keywords: [
+      titleKeywords,
+      descKeywords,
+      `${professionalProfile.personalInfo.jobTitle.toLowerCase()} portfolio`,
+      `${professionalProfile.professionalDetails.techStack
+        .split(',')[0]
+        .trim()} developer`,
+      ...professionalProfile.professionalDetails.techStack
+        .split(',')
+        .map((tech) => `${tech.trim()} developer`),
+      'web development',
+      'software engineer',
+      `${professionalProfile.personalInfo.location
+        .split(',')[0]
+        .trim()} developer`,
+    ].join(', '),
 
     openGraph: {
-      title: demoData.title,
-      description: demoData.footer_description,
-      url: demoData.website,
-      type: 'website',
+      title: professionalProfile.siteConfig.siteTitle,
+      description: professionalProfile.siteConfig.siteDescription,
+      url: professionalProfile.siteConfig.siteUrl,
+      type: 'profile',
       locale: 'en_US',
+      siteName: professionalProfile.siteConfig.siteTitle,
       images: [
         {
-          url: demoData.header_logo,
-          width: 1200,
-          height: 630,
-          alt: demoData.title,
+          url: professionalProfile.assets.profileImage.url,
+          width: professionalProfile.assets.profileImage.dimensions.width,
+          height: professionalProfile.assets.profileImage.dimensions.height,
+          alt: `${professionalProfile.personalInfo.fullName}'s Profile Picture`,
         },
         {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: "Mahbubur Rahman's Portfolio Projects",
+          url: professionalProfile.assets.logo.url,
+          width: professionalProfile.assets.logo.dimensions.width,
+          height: professionalProfile.assets.logo.dimensions.height,
+          alt: `${professionalProfile.personalInfo.fullName}'s Logo`,
+        },
+        {
+          url: professionalProfile.assets.openGraphImage.url,
+          width: professionalProfile.assets.openGraphImage.dimensions.width,
+          height: professionalProfile.assets.openGraphImage.dimensions.height,
+          alt: `${professionalProfile.personalInfo.fullName}'s Portfolio Showcase`,
         },
       ],
-      siteName: demoData.title,
+      profile: {
+        firstName: professionalProfile.personalInfo.firstName,
+        lastName: professionalProfile.personalInfo.lastName,
+        username: professionalProfile.siteConfig.siteUrl.replace(
+          /^https?:\/\//,
+          ''
+        ),
+        gender: professionalProfile.personalInfo.gender,
+      },
     },
 
     twitter: {
       card: 'summary_large_image',
-      title: demoData.title,
-      description: demoData.footer_description,
-      images: [demoData.header_logo, '/twitter-card.png'],
-      creator: '@mahbubur_dev',
+      title: professionalProfile.siteConfig.siteTitle,
+      description: professionalProfile.siteConfig.siteDescription,
+      images: [
+        professionalProfile.assets.profileImage.url,
+        professionalProfile.assets.logo.url,
+        professionalProfile.assets.twitterCardImage,
+      ],
+      creator: professionalProfile.siteConfig.twitterHandle,
+      site: professionalProfile.siteConfig.twitterHandle,
     },
 
     alternates: {
-      canonical: demoData.website,
+      canonical: professionalProfile.siteConfig.canonicalUrl,
     },
 
     robots: {
@@ -83,41 +172,43 @@ export async function generateMetadata() {
       },
     },
 
-    verification: {
-      google: 'google-site-verification=yourcode',
-      yandex: 'yandex-verification=yourcode',
-    },
+    verification: professionalProfile.verification,
 
     icons: {
-      icon: demoData.fev_icon,
-      shortcut: demoData.fev_icon,
-      apple: '/apple-touch-icon.png',
+      icon: professionalProfile.assets.favicon,
+      shortcut: professionalProfile.assets.favicon,
+      apple: professionalProfile.assets.appleTouchIcon,
       other: [
         {
           rel: 'apple-touch-icon-precomposed',
-          url: '/apple-touch-icon.png',
+          url: professionalProfile.assets.appleTouchIcon,
         },
         {
           rel: 'mask-icon',
-          url: '/safari-pinned-tab.svg',
-          color: '#5bbad5',
+          url: professionalProfile.assets.safariPinnedTab.url,
+          color: professionalProfile.assets.safariPinnedTab.color,
         },
       ],
     },
 
+    authors: [
+      {
+        name: professionalProfile.personalInfo.fullName,
+        url: professionalProfile.siteConfig.siteUrl,
+      },
+    ],
+
     other: {
-      'msapplication-TileColor': '#2b5797',
-      'msapplication-TileImage': '/mstile-144x144.png',
-      'theme-color': '#ffffff',
-      'og:site_name': demoData.title,
-      'og:type': 'website',
-      'og:locale': 'en_US',
-      'article:author': 'Mahbubur Rahman',
-      'x-stack': 'React, Next.js, Node.js, TypeScript',
-      'x-location': 'Dhaka, Bangladesh',
-      'profile:first_name': 'Mahbubur',
-      'profile:last_name': 'Rahman',
-      'profile:username': 'mahbubur_dev',
+      'msapplication-TileColor': professionalProfile.uiSettings.msTileColor,
+      'msapplication-TileImage': professionalProfile.assets.msTileImage,
+      'theme-color': professionalProfile.uiSettings.themeColor,
+      'article:author': professionalProfile.personalInfo.fullName,
+      'x-professional-stack': professionalProfile.professionalDetails.techStack,
+      'x-professional-location': professionalProfile.personalInfo.location,
+      'x-professional-status':
+        professionalProfile.professionalDetails.employmentStatus,
+      'x-professional-experience':
+        professionalProfile.professionalDetails.yearsOfExperience,
     },
   };
 }
