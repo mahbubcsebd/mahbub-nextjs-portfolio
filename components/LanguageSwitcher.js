@@ -28,7 +28,12 @@ const LanguageSwitcher = () => {
   return (
     <div className="relative">
       <Select value={language} onValueChange={changeLanguage}>
-        <SelectTrigger className="w-24 h-10 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-700 transition-colors focus:ring-0 focus:ring-offset-0 focus:outline-none [&[data-state=open]]:ring-0 [&[data-state=open]]:ring-offset-0 cursor-pointer">
+        <SelectTrigger
+          className="w-24 h-10 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none [&[data-state=open]]:ring-2 [&[data-state=open]]:ring-blue-500 cursor-pointer"
+          aria-label={`Language selector, current language is ${
+            currentLanguage?.name || currentLanguage?.code
+          }`}
+        >
           <div className="flex items-center gap-2">
             <div
               className="relative overflow-hidden shrink-0"
@@ -36,22 +41,28 @@ const LanguageSwitcher = () => {
                 width: `${flagWidth}px`,
                 height: `${flagHeight}px`,
               }}
+              aria-hidden="true"
             >
               {currentLanguage?.flag && (
                 <Image
                   src={currentLanguage.flag}
-                  alt={currentLanguage?.name || ''}
+                  alt="flag"
                   fill
                   className="object-cover"
                   style={{
                     aspectRatio: '10/6',
                   }}
+                  aria-hidden="true"
                 />
               )}
             </div>
             <span className="text-sm font-medium text-gray-700 truncate dark:text-gray-200">
               {currentLanguage?.code.toUpperCase()}
+              <span className="sr-only">
+                {currentLanguage?.name && ` (${currentLanguage.name})`}
+              </span>
             </span>
+            <span className="sr-only">, click to change language</span>
           </div>
         </SelectTrigger>
         <SelectContent
