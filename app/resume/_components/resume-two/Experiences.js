@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { experiences } from './_constants';
 import ResumeTitle from './ResumeTitle';
 
@@ -12,15 +13,20 @@ const Experiences = () => {
         <ul className="grid gap-6">
           {experiences.map((experience) => (
             <li key={experience.id}>
-              <div className="single-experience mb-3">
+              <div className="mb-3 single-experience">
                 {/* Header: Company and Role */}
-                <div className="flex justify-between items-center mb-1 flex-wrap gap-y-1">
-                  <h3 className="text-base font-semibold text-slate-700">
+                <div className="flex flex-wrap items-center justify-between mb-1 gap-y-1">
+                  <Link
+                    href={experience.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-semibold text-slate-700"
+                  >
                     {experience.company}
                     <span className="ml-2 text-sm font-normal text-slate-500">
                       – {experience.role}
                     </span>
-                  </h3>
+                  </Link>
                   <p className="text-sm text-slate-500">
                     {experience.duration}
                   </p>
@@ -30,7 +36,7 @@ const Experiences = () => {
                 <ul className="grid gap-2 mt-2 text-slate-600">
                   {experience.descriptions.map((description, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <span className="text-slate-400 text-xs mt-1 flex-shrink-0">
+                      <span className="flex-shrink-0 mt-1 text-xs text-slate-400">
                         •
                       </span>
                       <span className="text-[13px] text-slate-600 leading-relaxed">
