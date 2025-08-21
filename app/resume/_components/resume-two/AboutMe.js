@@ -4,13 +4,12 @@ const AboutMe = () => {
   return (
     <div className="mb-8">
       <ResumeTitle className="text-slate-800">About Me</ResumeTitle>
-      <p className="text-sm text-slate-600 leading-relaxed text-justify">
-        I am a passionate and detail-oriented frontend developer with a solid
-        foundation in modern web technologies. I thrive on crafting clean,
-        accessible, and user-friendly interfaces that enhance digital
-        experiences. With a strong commitment to quality and performance, my
-        goal is to deliver interfaces that not only function flawlessly but also
-        feel intuitive and engaging.
+      <p className="text-sm leading-relaxed text-justify text-slate-600">
+        Frontend developer specializing in React.js, Next.js, and modern web
+        architectures, with expertise in building API-driven, scalable
+        applications. Skilled in SSR, localization, authentication, and UI
+        optimization, I deliver user-friendly, high-performance solutions that
+        combine clean code with seamless digital experiences.
       </p>
     </div>
   );
