@@ -7,30 +7,57 @@ import {
   FaPhoneFlip,
 } from 'react-icons/fa6';
 
-const contactItems = [
+// const contactItems = [
+//   {
+//     type: 'website',
+//     icon: <FaGlobe />,
+//     value: 'mahbub-dev.vercel.app',
+//     link: 'https://mahbub-dev.vercel.app',
+//   },
+//   {
+//     type: 'github',
+//     icon: <FaGithub />,
+//     value: 'mahbubcsebd',
+//     link: 'https://github.com/mahbubcsebd',
+//   },
+//   {
+//     type: 'linkedin',
+//     icon: <FaLinkedinIn />,
+//     value: 'mahbubcseme',
+//     link: 'https://www.linkedin.com/in/mahbubcseme/',
+//   },
+//   {
+//     type: 'email',
+//     icon: <FaEnvelope />,
+//     value: 'mahbub.cse.me@gmail.com',
+//     link: 'mailto:mahbub.cse.me@gmail.com',
+//   },
+//   {
+//     type: 'address',
+//     icon: <FaMapMarkerAlt />,
+//     value: 'Dhaka-1215, Bangladesh',
+//     link: 'https://www.google.com/maps/search/?api=1&query=Farmgate+Tejgaon+Dhaka+1215',
+//   },
+//   {
+//     type: 'phone',
+//     icon: <FaPhoneFlip />,
+//     value: '+880 188622 5492',
+//     link: 'tel:+8801886225492',
+//   },
+// ];
+
+const contactInfo = [
   {
     type: 'website',
     icon: <FaGlobe />,
-    value: 'Portfolio',
+    value: 'mahbub-dev.vercel.app',
     link: 'https://mahbub-dev.vercel.app',
   },
   {
-    type: 'github',
-    icon: <FaGithub />,
-    value: 'github.com/mahbubcsebd',
-    link: 'https://github.com/mahbubcsebd',
-  },
-  {
-    type: 'linkedin',
-    icon: <FaLinkedinIn />,
-    value: 'linkedin/mahbubcsebd',
-    link: 'https://www.linkedin.com/in/mahbubcseme/',
-  },
-  {
-    type: 'address',
-    icon: <FaMapMarkerAlt />,
-    value: 'Dhaka-1215, Bangladesh',
-    link: 'https://www.google.com/maps/search/?api=1&query=Farmgate+Tejgaon+Dhaka+1215',
+    type: 'phone',
+    icon: <FaPhoneFlip />,
+    value: '+880 188622 5492',
+    link: 'tel:+8801886225492',
   },
   {
     type: 'email',
@@ -39,10 +66,34 @@ const contactItems = [
     link: 'mailto:mahbub.cse.me@gmail.com',
   },
   {
-    type: 'phone',
-    icon: <FaPhoneFlip />,
-    value: '+880 188622 5492',
-    link: 'tel:+8801886225492',
+    type: 'address',
+    icon: <FaMapMarkerAlt />,
+    value: 'Dhaka-1215, Bangladesh',
+    link: 'https://www.google.com/maps/search/?api=1&query=Farmgate+Tejgaon+Dhaka+1215',
+  },
+];
+
+const professionalInfo = [
+  {
+    type: 'website',
+    icon: <FaGlobe />,
+    label: 'Website',
+    value: 'mahbub-dev.vercel.app',
+    link: 'https://mahbub-dev.vercel.app',
+  },
+  {
+    type: 'linkedin',
+    icon: <FaLinkedinIn />,
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/mahbubcseme',
+    link: 'https://www.linkedin.com/in/mahbubcseme/',
+  },
+  {
+    type: 'github',
+    icon: <FaGithub />,
+    label: 'GitHub',
+    value: 'github.com/mahbubcsebd',
+    link: 'https://github.com/mahbubcsebd',
   },
 ];
 
@@ -114,7 +165,7 @@ const projects = [
     id: 1,
     name: 'Karbar',
     techStack: ['React 19', 'Next.js 15', 'Tailwind CSS', 'shadcn/ui'],
-    liveUrl: 'https://karbar.shop',
+    liveUrl: 'https://romartbd.com/',
     githubUrl:
       'https://gitlab.com/karbar-shop/theme/grocery-food-delivery/template-one',
     summary:
@@ -179,4 +230,11 @@ const projects = [
   },
 ];
 
-export { contactItems, educations, experiences, projects, skills };
+export {
+  contactInfo,
+  educations,
+  experiences,
+  professionalInfo,
+  projects,
+  skills,
+};

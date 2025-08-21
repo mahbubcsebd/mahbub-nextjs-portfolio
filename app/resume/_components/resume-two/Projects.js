@@ -5,17 +5,22 @@ import ResumeTitle from './ResumeTitle';
 
 const Projects = () => {
   return (
-    <div className="mb-6 print:mb-10">
+    <div className="mb-6">
       <ResumeTitle className="text-slate-800">Projects</ResumeTitle>
       <ul className="space-y-6">
-        {projects.map((project) => (
-          <li key={project.id} className="border-b border-gray-200 pb-5">
-            <div className="flex justify-between gap-4 mb-2 flex-wrap">
+        {projects.map((project, index) => (
+          <li
+            key={project.id}
+            className={`border-gray-200 ${
+              projects.length - 1 !== index ? 'pb-5 border-b' : ''
+            }`}
+          >
+            <div className="flex flex-wrap justify-between gap-4 mb-2">
               <div className="flex-1 min-w-[250px]">
-                <h3 className="text-base font-semibold text-slate-700 mb-1">
+                <h3 className="mb-1 text-base font-semibold text-slate-700">
                   {project.name}
                 </h3>
-                <p className="text-sm text-slate-600 mb-2">{project.summary}</p>
+                <p className="mb-2 text-sm text-slate-600">{project.summary}</p>
                 <div className="flex flex-wrap gap-1 text-[11px] font-medium">
                   {project.techStack.map((tech) => (
                     <span
@@ -34,7 +39,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
-                    className="hover:text-slate-800 transition-colors"
+                    className="transition-colors hover:text-slate-800"
                   >
                     <FaGithubAlt />
                   </Link>
@@ -45,7 +50,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Live site"
-                    className="hover:text-slate-800 transition-colors"
+                    className="transition-colors hover:text-slate-800"
                   >
                     <FaRegEye />
                   </Link>
@@ -53,10 +58,10 @@ const Projects = () => {
               </div>
             </div>
             {project.responsibilities?.length > 0 && (
-              <ul className="space-y-1 mt-3">
+              <ul className="mt-3 space-y-1">
                 {project.responsibilities.map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <span className="text-slate-400 text-xs mt-1 flex-shrink-0">
+                    <span className="flex-shrink-0 mt-1 text-xs text-slate-400">
                       •
                     </span>
                     <span className="text-[13px] text-slate-600 leading-relaxed">

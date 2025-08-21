@@ -1,5 +1,6 @@
 import Experiences from '../resume-two/Experiences';
 import AboutMe from './AboutMe';
+import Contacts from './Contacts';
 import Download from './Download';
 import Educations from './Educations';
 import Header from './Header';
@@ -15,7 +16,7 @@ const Resume = ({ handlePrint }) => {
       <Experiences />
       <Projects />
       <Educations />
-      {/* <Contacts /> */}
+      <Contacts />
       <Download handlePrint={handlePrint} />
     </div>
   );
