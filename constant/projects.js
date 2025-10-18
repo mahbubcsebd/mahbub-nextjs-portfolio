@@ -41,6 +41,17 @@ import uibarn from '@/assets/images/uibarn.png';
 const projects = [
   {
     id: 1,
+    title: 'Karbar',
+    version: '1.0',
+    description:
+      'Karbar is a subscription based ecommerce template services which has muliple template and POS, Tally features',
+    image: uibarn,
+    techs: ['nuxtjs', 'vue', 'tailwind'], // cleaned up
+    link: 'https://uibarn.com/',
+    github: '',
+  },
+  {
+    id: 2,
     title: 'Ui Barn Marketplace',
     version: '',
     description:
@@ -51,7 +62,7 @@ const projects = [
     github: '',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Policyhut Next JS',
     version: '',
     description:
@@ -62,7 +73,7 @@ const projects = [
     github: 'https://github.com/mahbubcsebd/policyhut',
   },
   {
-    id: 3,
+    id: 4,
     title: 'iLearning',
     version: '',
     description:
@@ -73,7 +84,7 @@ const projects = [
     github: 'https://github.com/mahbubcsebd/ilearning',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Cargopoint Next Js',
     version: '',
     description:

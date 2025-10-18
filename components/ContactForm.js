@@ -6,16 +6,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import useDictionary from '@/hooks/useDictionary';
-import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-
-const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 const formSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -29,7 +24,7 @@ const ContactForm = () => {
   const { dictionary } = useDictionary();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const form = useRef();
+  const [error, setError] = useState('');
 
   const {
     firstName,
@@ -52,25 +47,33 @@ const ContactForm = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
+    setError('');
 
     try {
-      const result = await emailjs.sendForm(
-        serviceId,
-        templateId,
-        form.current,
-        {
-          publicKey: publicKey,
-        }
-      );
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-      console.log('SUCCESS!', result.text);
-      setIsSubmitted(true);
-      reset();
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log('SUCCESS!', result.message);
+        setIsSubmitted(true);
+        reset();
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        console.log('FAILED...', result.error);
+        setError(result.error || 'Failed to send message. Please try again.');
+      }
     } catch (error) {
-      console.log('FAILED...', error);
+      console.log('ERROR:', error);
+      setError('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setIsSubmitted(false), 3000);
     }
   };
 
@@ -83,11 +86,7 @@ const ContactForm = () => {
       >
         <Card className="bg-white border border-gray-300 dark:border-gray-700 dark:bg-gray-800/50 backdrop-blur">
           <CardContent className="p-6">
-            <form
-              ref={form}
-              onSubmit={handleSubmit(onSubmit)}
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
                   <Input
@@ -207,6 +206,16 @@ const ContactForm = () => {
                   className="text-center text-emerald-500"
                 >
                   {successMessage}
+                </motion.div>
+              )}
+
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center text-red-500"
+                >
+                  {error}
                 </motion.div>
               )}
             </form>

@@ -14,7 +14,7 @@ const ProjectCard = ({ project }) => {
       viewport={{ once: true }}
       className="h-full group"
     >
-      <Card className="flex flex-col h-full overflow-hidden text-white transition-all duration-300 bg-white border-gray-300 hover:border-gray-200 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-700">
+      <Card className="flex flex-col h-full overflow-hidden text-white transition-all duration-300 bg-white border-gray-300 hover:border-gray-200 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-700 rounded-md">
         {/* Clickable Image */}
         <Link
           href={project.link || '#'}
