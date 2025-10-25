@@ -1,4 +1,5 @@
 // app/layout.js (or layout.tsx)
+import ChatBot from '@/components/ChatBot';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -221,6 +222,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen bg-[#f4f4f4] text-text-gray-900 dark:bg-[#0a0e1f] dark:text-white antialiased font-sans">
             {children}
+            <ChatBot />
           </div>
         </ThemeProvider>
       </body>
